@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo Random</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(45deg, #f06, #ff8c00, #4caf50);
+            color: white;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #ff8c00;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #ff5722;
+        }
+
+        .box {
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 80%;
+            max-width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a la Página Random</h1>
+    <p>Haz clic en el botón para obtener algo aleatorio</p>
+
+    <button class="btn" onclick="showRandomFact()">¡Generar!</button>
+
+    <div class="box" id="randomBox" style="display: none;">
+        <p id="randomText"></p>
+    </div>
+
+    <script>
+        function showRandomFact() {
+            const facts = [
+                "Los pulpos tienen tres corazones.",
+                "Las abejas pueden reconocer rostros humanos.",
+                "La Tierra es el único planeta conocido que tiene agua en estado líquido.",
+                "Un día en Venus dura más que un año en Venus.",
+                "El cerebro humano pesa alrededor de 1.4 kg."
+            ];
+
+            const randomFact = facts[Math.floor(Math.random() * facts.length)];
+
+            document.getElementById("randomText").textContent = randomFact;
+            document.getElementById("randomBox").style.display = "block";
+        }
+    </script>
+</body>
+</html>
